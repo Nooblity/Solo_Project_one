@@ -71,7 +71,17 @@ def success():
     data ={
         'id': session['users_id']
     }    
-    return render_template ("dashboard.html", user=User.get_user_by_id(data),receipes=Receipe.get_all())
+    return render_template ("dashboard.html", user=User.get_user_by_id(data))
+
+@app.route('/accountinfo')
+def accountinfo():
+    if 'users_id' not in session:
+        return redirect('/logout')
+    data ={
+        'id': session['users_id']
+    }    
+    return render_template ("accountinfo.html", user=User.get_user_by_id(data))
+
 
 @app.route('/logout')         
 def destory_session():

@@ -16,7 +16,6 @@ class User:
         self.city = data['city']
         self.email = data['email']
         self.phone = data['phone']
-        self.preferrence = data['order_preference.orders_id']
         self.password = data['password']        
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
@@ -24,7 +23,7 @@ class User:
     
     @classmethod
     def save(cls, data):
-        query = 'INSERT INTO users (first_name,last_name,email,password,phone, address,city, state, zip) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s ,%(phone)s  ,%(address)s  ,%(city)s   ,%(state)s  ,%(zip)s       );'
+        query = 'INSERT INTO users (first_name,last_name,email,password,phone, address,city, state, zip) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s,%(phone)s,%(address)s  ,%(city)s   ,%(state)s  ,%(zip)s       );'
         return connectToMySQL(cls.db).query_db(query,data)
     
     
