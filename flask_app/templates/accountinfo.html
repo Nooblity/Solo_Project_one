@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Pizzatime</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <strong>Pizzatime</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main role="main">
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                
+                <form action='/update' method='post'>
+                    <h4 class="mb-3" id='info'>Your Account Information</h4>
+                    <div class="row">
+                        <input type="hidden" name="id" value="{{user.id}}">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" name="first_name" placeholder="" value="{{user.first_name}}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="last_name">Last name</label>
+                            <input type="text" class="form-control" name="last_name" placeholder="" value="{{user.last_name}}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone">Phone No.</label>
+                            <input type="text" class="form-control" name="phone" placeholder="" value="{{user.phone}}">
+                        </div>
+                        <!-- <div class="col-md-6 mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" placeholder="{{user.email}}" value=""> -->
+                        <!-- </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="password">Password</label>
+                            <input type="text" class="form-control" name="password" placeholder="" value="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="password">Confirm Password</label>
+                            <input type="text" class="form-control" name="confirm_password" placeholder="" value="">
+                        </div> -->
+                    </div>
+                    
+                    
+
+                <h4 class="mb-3" id='info'>Your Address Information</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" name="address" placeholder="" value="{{user.address}}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" name="city" placeholder="" value="{{user.city}}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" class="form-control" name="zip" placeholder="" value="{{user.zip}}">
+                    </div>    
+                    <div class="col-md-6 mb-3">
+                        <label for="state">State</label>
+                        <select name='state' class="form-control">
+                            <option value='CA'>CA</option>
+                            <option value='OR'>OR</option>
+                        </select>
+                    </div>    
+                    <div class="col-md-6 mb-3">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Update My Information</button>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <a href="/logout" class="btn btn-primary btn-lg btn-block">Log Out</a>
+                    </div>    
+                </form>
+            </div>
+        </div>    
+    </main>
+    
+</body>
+</html>    

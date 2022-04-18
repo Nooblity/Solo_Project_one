@@ -26,6 +26,11 @@ class User:
         query = 'INSERT INTO users (first_name,last_name,email,password,phone, address,city, state, zip) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s,%(phone)s,%(address)s  ,%(city)s   ,%(state)s  ,%(zip)s       );'
         return connectToMySQL(cls.db).query_db(query,data)
     
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE users SET first_name=%(first_name)s,last_name=%(last_name)s,phone = %(phone)s, address = %(address)s,city = %(city)s,state = %(state)s,zip = %(zip)s WHERE id = %(id)s;"
+        return connectToMySQL(cls.db).query_db(query,data)
+    
     
     @classmethod
     def get_all_user(cls):

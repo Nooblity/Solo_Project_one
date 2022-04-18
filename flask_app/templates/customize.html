@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>Pizzatime</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <strong>Pizzatime</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <form action='/customizepizza' method='post'>
+                    <h4 class="mb-3" id='info'>Welcome Back {{user.first_name.capitalize()}}! What would you like to have on your pizza today?</h4>
+                    <div class="col-md-6 mb-3">
+                        <label for="size">Sizes</label>
+                        <select name='sizes' class="form-control">
+                            <option value='Small'>Small $2.99</option>
+                            <option value='Medium'>Medium $4.99</option>
+                            <option value='Large'>Large $6.99</option>
+                            <option value='Huge'>Huge $8.99</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="crust">Crust</label>
+                        <select name='crust' class="form-control">
+                            <option value='Thin'>Thin</option>
+                            <option value='Thick'>Thick</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cheese">Cheese</label>
+                        <select name='cheese' class="form-control">
+                            <option value='Blue Cheese'>Blue Cheese</option>
+                            <option value='Swiss Cheese'>Swiss Cheese</option>
+                            <option value='Goat Cheese'>Goat Cheese</option>
+                            <option value='American Cheese'>American Cheese</option>
+                            <option value='Cheder Cheese'>Cheder Cheese</option>
+                            <option value='Mozzarella Cheese'>Mozzarella Cheese</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="topping1">Toppong1</label>
+                        <select name='topping1' class="form-control">
+                            <option value="None">Select</option>
+                            <option value='Tuna'>Tuna $5.50</option>
+                            <option value='Prawns'>Prawns $5.50</option>
+                            <option value='Squid'>Squid $5.50</option>
+                            <option value='Roasted Beef'>Roasted Beef $3.50</option>
+                            <option value='Meatballs'>Meatballs $3.50</option>
+                            <option value='Mushroom'>Mushroom $2.00</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="topping2">Toppong2</label>
+                        <select name='topping2' class="form-control">
+                            <option value="None">Select</option>
+                            <option value='Tuna'>Tuna $5.50</option>
+                            <option value='Prawns'>Prawns $5.50</option>
+                            <option value='Squid'>Squid $5.50</option>
+                            <option value='Roasted Beef'>Roasted Beef $3.50</option>
+                            <option value='Meatballs'>Meatballs $3.50</option>
+                            <option value='Mushroom'>Mushroom $2.00</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="topping3">Toppong3</label>
+                        <select name='topping3' class="form-control">
+                            <option value="None">Select</option>
+                            <option value='Tuna'>Tuna $5.50</option>
+                            <option value='Prawns'>Prawns $5.50</option>
+                            <option value='Squid'>Squid $5.50</option>
+                            <option value='Roasted Beef'>Roasted Beef $3.50</option>
+                            <option value='Meatballs'>Meatballs $3.50</option>
+                            <option value='Mushroom'>Mushroom $2.00</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Add to Order</button>
+                    </div>
+                </form>     
+            </div>            
+        </div>        
+    </main>    
+
+    
+</body>
+</html>    
