@@ -25,9 +25,10 @@
             <div class="container">
                 <form action='/customizepizza' method='post'>
                     <h4 class="mb-3" id='info'>Welcome Back {{user.first_name.capitalize()}}! What would you like to have on your pizza today?</h4>
+                    <input type="hidden" name="name" value="customized pizza">
                     <div class="col-md-6 mb-3">
                         <label for="size">Sizes</label>
-                        <select name='sizes' class="form-control">
+                        <select name='size' class="form-control">
                             <option value='Small'>Small $2.99</option>
                             <option value='Medium'>Medium $4.99</option>
                             <option value='Large'>Large $6.99</option>

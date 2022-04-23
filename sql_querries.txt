@@ -6,3 +6,13 @@ left outer join toppings as topping1 on topping1 = topping1.name
 left outer join toppings as topping2 on topping2 = topping2.name 
 left outer join toppings as topping3 on topping3 = topping3.name
 left outer join sizes on pizzas.size = sizes.size
+
+
+
+
+Select pizzas.id, pizzas.size, cheese, crust, topping1,  topping2, topping3,  (sizes.price + topping1.price + topping2.price + topping3.price) as total from pizzas 
+left outer join toppings as topping1 on topping1 = topping1.name  
+left outer join toppings as topping2 on topping2 = topping2.name 
+left outer join toppings as topping3 on topping3 = topping3.name
+left outer join sizes on pizzas.size = sizes.size
+where id = LAST_INSERT_ID()+1
